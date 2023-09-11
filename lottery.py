@@ -1,7 +1,6 @@
 from random import choice
 
-# Lottery game
-
+# Did some changes
 class Lottery:
 
     def __init__(self, lottery_codes):
