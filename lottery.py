@@ -1,24 +1,26 @@
 from random import choice
 
-# Did some changes
+MIN_CODE_LENGTH = 2
+MAX_CODE_LENGTH = 5
+
 class Lottery:
 
-    def __init__(self, lottery_codes):
+    def __init__(self, lottery_codes, min_code_length, max_code_length):
         self.lottery_codes = lottery_codes
+        self.min_code_length = min_code_length
+        self.max_code_length = max_code_length
 
     def _ask_ticket(self):
-        self.user_ticket = input("Enter from 3 to 5 symbols in ONE string of your ticket number (numbers and letters):")
+        self.user_ticket = input("Enter from 2 to 5 symbols in ONE string of your ticket number (numbers and letters):")
 
     def _validate_ticket(self):
-        if len(self.user_ticket) < 2:
+        if len(self.user_ticket) < self.min_code_length:
             print("Your ticket number less than 3. Try again!")
             self._ask_ticket()
-            # Reload program
 
-        elif len(self.user_ticket) > 5:
+        elif len(self.user_ticket) > self.max_code_length:
             print("Your ticket number more than 5. Try again!")
             self._ask_ticket()
-            # Reload program
 
         else:
             print(f"You have entered {len(self.user_ticket)} symbols. Calculating is starting...")
