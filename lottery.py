@@ -1,5 +1,8 @@
 from random import choice
 
+MIN_CODE_LENGTH = 2
+MAX_CODE_LENGTH = 5
+
 class Lottery:
 
     def __init__(self, lottery_codes, min_code_length, max_code_length):
@@ -8,7 +11,7 @@ class Lottery:
         self.max_code_length = max_code_length
 
     def _ask_ticket(self):
-        self.user_ticket = input("Enter from 3 to 5 symbols in ONE string of your ticket number (numbers and letters):")
+        self.user_ticket = input("Enter from 2 to 5 symbols in ONE string of your ticket number (numbers and letters):")
 
     def _validate_ticket(self):
         if len(self.user_ticket) < self.min_code_length:
